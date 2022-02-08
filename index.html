@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Student Information</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <template id="Divtemplate" type="x-template">
+      <div class="container">
+        <h1>{{ pageTitle }}</h1>
+        <h2>{{ sectionTitle }}</h2>
+        <div v-html="profilePhoto" class="profilePhoto"></div>
+
+        <div
+          v-for="(singleStudent, index) in student"
+          :key="singleStudent.firstName"
+        >
+          <p>First Name: {{ singleStudent.firstName }}</p>
+          <p>Last Name: {{ singleStudent.lastName }}</p>
+
+          <p>
+            Full Name: {{ fullName(singleStudent.lastName,
+            singleStudent.firstName) }}
+          </p>
+
+          <p v-if="singleStudent.preferredName != null">
+            Preferred Name: {{ singleStudent.preferredName }}
+          </p>
+          <input
+            type="text"
+            v-show="visibleOrNot"
+            v-model="singleStudent.preferredName"
+            placeholder="Enter your preferred name!"
+          />
+          <button @click="hideInput()">change</button>
+          <p v-show="singleStudent.firstName == 'Abdullahi'">
+            TechID: {{ techID }}
+          </p>
+          <p class="major">
+            Major: <br />
+            <span> Id: {{singleStudent.major.id}}</span>
+            <span>Name: {{singleStudent.major.name}}</span>
+            <span>Total Credits: {{singleStudent.major.totalCredits}}</span>
+          </p>
+          <p v-show="singleStudent.graduationYear == 2023">
+            Expected Graduation Year: {{ singleStudent.graduationYear }}
+          </p>
+          <p v-if="singleStudent.gpa >= 3" v-bind:class="setGPAColor">
+            GPA: A - {{ singleStudent.gpa }}
+          </p>
+          <p v-else-if="singleStudent.gpa >= 2" v-bind:class="setGPAColor">
+            GPA: B - {{ singleStudent.gpa }}
+          </p>
+          <p v-else-if="singleStudent.gpa >= 1" v-bind:class="setGPAColor">
+            GPA: C - {{ singleStudent.gpa }}
+          </p>
+          <p v-else-if="singleStudent.gpa == 0" v-bind:class="setGPAColor">
+            GPA: D - {{ singleStudent.gpa }}
+          </p>
+          <p v-else v-bind:class="setGPAColor">
+            GPA: F - {{ singleStudent.gpa }}
+          </p>
+          <div v-if="index < student.length-1"><hr /></div>
+        </div>
+
+        <button type="button" id="setTechID">Show TechID</button>
+      </div>
+    </template>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="vue.js"></script>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin-left: 0.5rem;
+  padding: 0;
+  background-color: #f7c093;
+  width: 90%;
+}
+body {
+  margin-top: 2rem;
+}
+.container h1 {
+  margin-bottom: 2rem;
+  font-size: 3em;
+  text-decoration: underline;
+}
+.container h2 {
+  text-decoration: underline;
+}
+.red {
+  color: red;
+}
+.orange {
+  color: orange;
+}
+.yellow {
+  color: yellow;
+}
+.green {
+  color: green;
+}
+.profilePhoto {
+  width: 30%;
+  height: 25%;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+}
+#setTechID {
+  width: auto;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+  border: none;
+}
+.major span {
+  margin-left: 2rem;
+  padding-top: 1rem;
+  display: block;
+}
