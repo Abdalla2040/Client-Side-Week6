@@ -11,6 +11,17 @@ var app = new Vue({
     graduationYear: null,
     gpa: null,
     gpaColor: null,
+    newStudent: {
+      firstName: null,
+      lastName: null,
+      major: {
+        id: null,
+        name: null,
+        totalCredits: null,
+      },
+      graduationYear: null,
+      gpa: null,
+    },
     student: [
       {
         firstName: "Abdullahi",
@@ -49,7 +60,7 @@ var app = new Vue({
         gpa: 4.0,
       },
     ],
-    updated: "",
+    updated: null,
     visibleOrNot: true,
   },
   methods: {
@@ -60,9 +71,31 @@ var app = new Vue({
       if (this.visibleOrNot) this.visibleOrNot = false;
       else this.visibleOrNot = true;
     },
+    setUpdated: function () {
+      const today = new Date();
+      this.updated = today;
+      return this.updated;
+    },
+    setNewStudent: function () {
+      this.student.push(Object.assign({}, this.newStudent));
+      this.reset();
+      // this.newStudent.major.id = "";
+      // this.newStudent.major.name = "";
+      // this.newStudent.major.totalCredits = "";
+
+      //this.newStudent = Object.assign({}, this.newStudent);
+    },
+    reset: function () {
+      this.newStudent.firstName = "";
+      this.newStudent.lastName = "";
+      this.newStudent.major.id = "";
+      this.newStudent.major.name = "";
+      this.newStudent.major.totalCredits = "";
+      this.newStudent.graduationYear = "";
+      this.newStudent.gpa = "";
+    },
   },
   computed: {
-    // this will not return class/color. the gpa and gpaColor variables are not getting assigned. Tips on how to solve?
     setGPAColor: function () {
       this.gpa = this.student.gpa;
       if (this.gpa >= 3) {
@@ -76,9 +109,15 @@ var app = new Vue({
       } else {
         this.gpaColor = "red";
       }
-      console.log(this.student.gpa + " - " + this.gpaColor);
-
       return this.gpaColor;
+    },
+  },
+  watch: {
+    student: {
+      deep: true,
+      handler() {
+        this.setUpdated();
+      },
     },
   },
   template: "#Divtemplate",

@@ -14,7 +14,35 @@
         <h1>{{ pageTitle }}</h1>
         <h2>{{ sectionTitle }}</h2>
         <div v-html="profilePhoto" class="profilePhoto"></div>
-
+        <div>
+          <form>
+            <fieldset>
+              <legend>New Student</legend>
+              <label
+                >First Name: <input type="text" v-model="newStudent.firstName"
+              /></label>
+              <label
+                >Last Name: <input type="text" v-model="newStudent.lastName"
+              /></label>
+              <label
+                >Major: <br />
+                ID: <input type="text" v-model="newStudent.major.id" /> Name:
+                <input type="text" v-model="newStudent.major.name" /> Total
+                Credits:
+                <input type="text" v-model="newStudent.major.totalCredits" />
+                /></label
+              >
+              <label
+                >Expected Graduation Year:
+                <input type="text" v-model="newStudent.graduationYear"
+              /></label>
+              <label>GPA: <input type="text" v-model="newStudent.gpa" /></label>
+            </fieldset>
+            <button type="submit" v-on:click.prevent="setNewStudent()">
+              Enroll
+            </button>
+          </form>
+        </div>
         <div
           v-for="(singleStudent, index) in student"
           :key="singleStudent.firstName"
@@ -31,12 +59,15 @@
             Preferred Name: {{ singleStudent.preferredName }}
           </p>
           <input
+            class="input"
             type="text"
             v-show="visibleOrNot"
             v-model="singleStudent.preferredName"
             placeholder="Enter your preferred name!"
           />
-          <button @click="hideInput()">change</button>
+          <button class="hideInput" @click="hideInput()">
+            Edit Preferred Name
+          </button>
           <p v-show="singleStudent.firstName == 'Abdullahi'">
             TechID: {{ techID }}
           </p>
@@ -46,7 +77,8 @@
             <span>Name: {{singleStudent.major.name}}</span>
             <span>Total Credits: {{singleStudent.major.totalCredits}}</span>
           </p>
-          <p v-show="singleStudent.graduationYear == 2023">
+          <p>
+            <!-- v-show="singleStudent.graduationYear == 2023" -->
             Expected Graduation Year: {{ singleStudent.graduationYear }}
           </p>
           <p v-if="singleStudent.gpa >= 3" v-bind:class="setGPAColor">
@@ -68,6 +100,7 @@
         </div>
 
         <button type="button" id="setTechID">Show TechID</button>
+        <p class="green" v-bind="updated">Updated On: {{ updated }}</p>
       </div>
     </template>
     <script

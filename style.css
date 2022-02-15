@@ -2,7 +2,7 @@
   box-sizing: border-box;
   margin-left: 0.5rem;
   padding: 0;
-  background-color: #f7c093;
+  background-color: #93a5cf;
   width: 90%;
 }
 body {
@@ -27,6 +27,8 @@ body {
 }
 .green {
   color: green;
+  font-size: 1.5em;
+  font-weight: 600;
 }
 .profilePhoto {
   width: 30%;
@@ -47,4 +49,22 @@ body {
   margin-left: 2rem;
   padding-top: 1rem;
   display: block;
+}
+.input,
+.hideInput {
+  display: block;
+  padding: 0.25rem;
+  width: 25%;
+}
+.input {
+  margin-bottom: 0.5rem;
+  background-color: rgb(188, 234, 235);
+}
+.hideInput {
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+  border: none;
 }
