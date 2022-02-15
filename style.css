@@ -35,6 +35,7 @@ body {
   height: 25%;
   margin-bottom: 3rem;
   margin-top: 2rem;
+
 }
 #setTechID {
   width: auto;
@@ -67,4 +68,55 @@ body {
   background-color: black;
   border-radius: 0.5rem;
   border: none;
+}
+#form1{
+  position: absolute;
+  top: 10rem;
+  right: 30rem;
+  width: 40%;
+  font-weight: 600;
+  background-color: #3a748f;
+ 
+}
+#form1 input{
+  display: block;
+  padding: 0.3rem 1rem;
+  margin: 0.5rem;
+  border-radius: 2rem;
+}
+.studentInfo{
+  margin-top: 5rem;
+  width: 70%;
+}
+#form1 label{
+  display: block;
+  width: auto;
+  margin-left: auto;
+  background-color: powderblue;
+}
+#form1 label:nth-of-type(4){
+  margin-left: 3rem;
+  font-weight: 100;
+  width: 80%;
+}
+#form1 fieldset{
+  margin: 1rem;
+  padding: 3rem;
+  background-color: powderblue
+}
+.newStdBtn{
+  
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 2rem;
+  box-shadow:  0.1rem 0.1rem 0.5rem lightblue;;
+  padding: 0.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: black;
+  border-radius: 0.5rem;
+  border: none;
+}
+legend{
+  background-color: powderblue;
 }
