@@ -15,35 +15,27 @@
         <h2>{{ sectionTitle }}</h2>
         <div v-html="profilePhoto" class="profilePhoto"></div>
         <div>
-          <form>
+          <form id="form1">
             <fieldset>
-              <legend>New Student</legend>
-              <label
-                >First Name: <input type="text" v-model="newStudent.firstName"
-              /></label>
-              <label
-                >Last Name: <input type="text" v-model="newStudent.lastName"
-              /></label>
-              <label
-                >Major: <br />
-                ID: <input type="text" v-model="newStudent.major.id" /> Name:
-                <input type="text" v-model="newStudent.major.name" /> Total
-                Credits:
-                <input type="text" v-model="newStudent.major.totalCredits" />
-                /></label
-              >
-              <label
-                >Expected Graduation Year:
-                <input type="text" v-model="newStudent.graduationYear"
-              /></label>
+              <legend>ADD STUDENT</legend>
+              <label>First Name: <input type="text" v-model="newStudent.firstName"/></label>
+              <label>Last Name: <input type="text" v-model="newStudent.lastName"/></label>
+              <!-- <label>Major: </label>
+              <label>
+                  Major ID: <input type="text" v-model="newStudent.major.id" /> 
+                  Major Name: <input type="text" v-model="newStudent.major.name" /> 
+                  Total Credits: <input type="text" v-model="newStudent.major.totalCredits" />
+              </label> -->
+              <label>Expected Graduation Year: <input type="text" v-model="newStudent.graduationYear"/></label>
               <label>GPA: <input type="text" v-model="newStudent.gpa" /></label>
             </fieldset>
-            <button type="submit" v-on:click.prevent="setNewStudent()">
-              Enroll
+            <button type="submit" class="newStdBtn" v-on:click.prevent="setNewStudent()">
+              ADD
             </button>
           </form>
         </div>
         <div
+          class="studentInfo"
           v-for="(singleStudent, index) in student"
           :key="singleStudent.firstName"
         >

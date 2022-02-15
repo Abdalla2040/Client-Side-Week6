@@ -14,11 +14,11 @@ var app = new Vue({
     newStudent: {
       firstName: null,
       lastName: null,
-      major: {
-        id: null,
-        name: null,
-        totalCredits: null,
-      },
+      // major: {
+      //   id: null,
+      //   name: null,
+      //   totalCredits: null,
+      // },
       graduationYear: null,
       gpa: null,
     },
@@ -77,7 +77,9 @@ var app = new Vue({
       return this.updated;
     },
     setNewStudent: function () {
+     
       this.student.push(Object.assign({}, this.newStudent));
+    
       this.reset();
       // this.newStudent.major.id = "";
       // this.newStudent.major.name = "";
@@ -88,9 +90,7 @@ var app = new Vue({
     reset: function () {
       this.newStudent.firstName = "";
       this.newStudent.lastName = "";
-      this.newStudent.major.id = "";
-      this.newStudent.major.name = "";
-      this.newStudent.major.totalCredits = "";
+   
       this.newStudent.graduationYear = "";
       this.newStudent.gpa = "";
     },
