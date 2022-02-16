@@ -18,18 +18,62 @@
           <form id="form1">
             <fieldset>
               <legend>ADD STUDENT</legend>
-              <label>First Name: <input type="text" v-model="newStudent.firstName"/></label>
-              <label>Last Name: <input type="text" v-model="newStudent.lastName"/></label>
-              <!-- <label>Major: </label>
+              <label
+                >First Name:
+                <input
+                  type="text"
+                  v-model="newStudent.firstName"
+                  placeholder="Enter student's first name"
+              /></label>
+              <label
+                >Last Name:
+                <input
+                  type="text"
+                  v-model="newStudent.lastName"
+                  placeholder="Enter student's last name"
+              /></label>
+
+              <label>Major: </label>
               <label>
-                  Major ID: <input type="text" v-model="newStudent.major.id" /> 
-                  Major Name: <input type="text" v-model="newStudent.major.name" /> 
-                  Total Credits: <input type="text" v-model="newStudent.major.totalCredits" />
-              </label> -->
-              <label>Expected Graduation Year: <input type="text" v-model="newStudent.graduationYear"/></label>
-              <label>GPA: <input type="text" v-model="newStudent.gpa" /></label>
+                Major ID:
+                <input
+                  type="text"
+                  v-model="newStudent.major.id"
+                  placeholder="Enter student's major ID number"
+                />
+                Major Name:<input
+                  type="text"
+                  v-model="newStudent.major.name"
+                  placeholder="Enter student's major name"
+                />
+                Total Credits:
+                <input
+                  type="text"
+                  v-model="newStudent.major.totalCredits"
+                  placeholder="Enter student's accumulated credits"
+                />
+              </label>
+
+              <label
+                >Expected Graduation Year:
+                <input
+                  type="text"
+                  v-model="newStudent.graduationYear"
+                  placeholder="e.g. 2023"
+              /></label>
+              <label
+                >GPA:
+                <input
+                  type="text"
+                  v-model="newStudent.gpa"
+                  placeholder="Enter student's current GPA"
+              /></label>
             </fieldset>
-            <button type="submit" class="newStdBtn" v-on:click.prevent="setNewStudent()">
+            <button
+              type="submit"
+              class="newStdBtn"
+              v-on:click.prevent="setNewStudent()"
+            >
               ADD
             </button>
           </form>
@@ -69,8 +113,7 @@
             <span>Name: {{singleStudent.major.name}}</span>
             <span>Total Credits: {{singleStudent.major.totalCredits}}</span>
           </p>
-          <p>
-            <!-- v-show="singleStudent.graduationYear == 2023" -->
+          <p v-show="singleStudent.graduationYear == 2023">
             Expected Graduation Year: {{ singleStudent.graduationYear }}
           </p>
           <p v-if="singleStudent.gpa >= 3" v-bind:class="setGPAColor">

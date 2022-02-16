@@ -35,7 +35,6 @@ body {
   height: 25%;
   margin-bottom: 3rem;
   margin-top: 2rem;
-
 }
 #setTechID {
   width: auto;
@@ -69,47 +68,45 @@ body {
   border-radius: 0.5rem;
   border: none;
 }
-#form1{
+#form1 {
   position: absolute;
   top: 10rem;
-  right: 30rem;
+  right: 25rem;
   width: 40%;
   font-weight: 600;
   background-color: #3a748f;
- 
 }
-#form1 input{
+#form1 input {
   display: block;
   padding: 0.3rem 1rem;
   margin: 0.5rem;
   border-radius: 2rem;
 }
-.studentInfo{
+.studentInfo {
   margin-top: 5rem;
   width: 70%;
 }
-#form1 label{
+#form1 label {
   display: block;
   width: auto;
   margin-left: auto;
   background-color: powderblue;
 }
-#form1 label:nth-of-type(4){
+#form1 label:nth-of-type(4) {
   margin-left: 3rem;
   font-weight: 100;
   width: 80%;
 }
-#form1 fieldset{
+#form1 fieldset {
   margin: 1rem;
   padding: 3rem;
-  background-color: powderblue
+  background-color: powderblue;
 }
-.newStdBtn{
-  
+.newStdBtn {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   border-radius: 2rem;
-  box-shadow:  0.1rem 0.1rem 0.5rem lightblue;;
+  box-shadow: 0.1rem 0.1rem 0.5rem lightblue;
   padding: 0.5rem;
   font-size: 1rem;
   color: white;
@@ -117,6 +114,9 @@ body {
   border-radius: 0.5rem;
   border: none;
 }
-legend{
+legend {
   background-color: powderblue;
+}
+#form1 input::placeholder {
+  color: rgb(79, 77, 77);
 }

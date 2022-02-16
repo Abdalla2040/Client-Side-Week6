@@ -14,11 +14,11 @@ var app = new Vue({
     newStudent: {
       firstName: null,
       lastName: null,
-      // major: {
-      //   id: null,
-      //   name: null,
-      //   totalCredits: null,
-      // },
+      major: {
+        id: null,
+        name: null,
+        totalCredits: null,
+      },
       graduationYear: null,
       gpa: null,
     },
@@ -61,15 +61,15 @@ var app = new Vue({
       },
     ],
     updated: null,
-    visibleOrNot: true,
+    visibleOrNot: null,
   },
   methods: {
     fullName: function (lastName, firstName) {
       return lastName + ", " + firstName;
     },
     hideInput: function () {
-      if (this.visibleOrNot) this.visibleOrNot = false;
-      else this.visibleOrNot = true;
+      if (!this.visibleOrNot) this.visibleOrNot = true;
+      else this.visibleOrNot = false;
     },
     setUpdated: function () {
       const today = new Date();
@@ -77,20 +77,11 @@ var app = new Vue({
       return this.updated;
     },
     setNewStudent: function () {
-     
       this.student.push(Object.assign({}, this.newStudent));
-    
-      this.reset();
-      // this.newStudent.major.id = "";
-      // this.newStudent.major.name = "";
-      // this.newStudent.major.totalCredits = "";
 
-      //this.newStudent = Object.assign({}, this.newStudent);
-    },
-    reset: function () {
       this.newStudent.firstName = "";
       this.newStudent.lastName = "";
-   
+      this.newStudent.major = "";
       this.newStudent.graduationYear = "";
       this.newStudent.gpa = "";
     },
